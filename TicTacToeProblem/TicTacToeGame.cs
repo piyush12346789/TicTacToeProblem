@@ -1,16 +1,12 @@
 ﻿using System;
-using System.Security.Cryptography.X509Certificates;
+using System.Collections.Generic;
+using System.Text;
 
 namespace TicTacToeProblem
 {
     public class TicTacToeGame
     {
-        static void Main(string[] args)
-        {
-            char[] board = createTicTacToeBoard();
-            char userChoice = chooseUserChoice();
-        }
-        private static char[] createTicTacToeBoard()
+        public char[] createTicTacToeBoard()
         {
             char[] board = new char[10];
             for (int i = 1; i < board.Length; i++)
@@ -19,11 +15,21 @@ namespace TicTacToeProblem
             }
             return board;
         }
-        private static char chooseUserChoice()
+        public char chooseUserChoice()
         {
-            Console.WriteLine("Choose your letter: ");
-            string userChoice = Console.ReadLine();
-            return char.ToUpper(userChoice[0]);
+            while (true)
+            {
+                Console.WriteLine("Choose your letter: ");
+                char userChoice = (Console.ReadLine()).ToUpper()[0];
+                if (userChoice == 'X' || userChoice == 'O')
+                {
+                    return userChoice;
+                }
+                else
+                {
+                    Console.WriteLine("You can choose only X or O");
+                }
+            }
         }
     }
 }
