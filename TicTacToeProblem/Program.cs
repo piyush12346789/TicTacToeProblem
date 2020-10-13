@@ -14,7 +14,7 @@ namespace TicTacToeProblem
             Console.WriteLine("Computer's Letter :" + computerChoice);
             TicTacToe.showBoard(board);
             TicTacToe.MakeUserDesiredMove(board, userChoice);
-            TicTacToe.flipingACoin();
+            string winner = TicTacToe.flipingACoin();
         }
     }
 }
