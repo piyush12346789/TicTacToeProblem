@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Security.Cryptography.X509Certificates;
 
 namespace TicTacToeProblem
 {
@@ -7,6 +8,7 @@ namespace TicTacToeProblem
         static void Main(string[] args)
         {
             char[] board = createTicTacToeBoard();
+            char userChoice = chooseUserChoice();
         }
         private static char[] createTicTacToeBoard()
         {
@@ -16,6 +18,12 @@ namespace TicTacToeProblem
                 board[i] = ' ';
             }
             return board;
+        }
+        private static char chooseUserChoice()
+        {
+            Console.WriteLine("Choose your letter: ");
+            string userChoice = Console.ReadLine();
+            return char.ToUpper(userChoice[0]);
         }
     }
 }
