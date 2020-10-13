@@ -53,22 +53,33 @@ namespace TicTacToeProblem
             Console.WriteLine(board[7]  + " | " + board[8] + " | " + board[9]);
             Console.WriteLine("------------");
         }
-        public int getUserDesiredMove(char[] board)
+        public void MakeUserDesiredMove(char[] board, char userChoice)
         {
-            int[] validMoves = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+            // int[] validMoves = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+            Console.WriteLine("What is your desired next move?");
             while (true)
-            {
-                Console.WriteLine("What is your desired next move?");
+            { 
                 int index = Convert.ToInt32(Console.ReadLine());
-                if(index >=1 && index <= 9 && board[index] == ' ')
+                if(index >=1 && index <= 9)
                 {
-                    return index;
+                    if(IsSpaceFree(board, index))
+                    {
+                        board[index] = userChoice;
+                        break;
+                    }
                 }
                 else
                 {
                     Console.WriteLine("Invalid entry please check the input and try again.");
                 }
             }
+        }
+        public bool IsSpaceFree(char[] board, int index)
+        {
+            if (board[index] == ' ')
+                return true;
+            else
+                return false;
         }
 
     }

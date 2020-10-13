@@ -13,8 +13,7 @@ namespace TicTacToeProblem
             Console.WriteLine("Your Letter :" + userChoice);
             Console.WriteLine("Computer's Letter :" + computerChoice);
             TicTacToe.showBoard(board);
-            int userDesiredMove = TicTacToe.getUserDesiredMove(board);
-            TicTacToe.showBoard(board);
+            TicTacToe.MakeUserDesiredMove(board, userChoice);
         }
     }
 }
