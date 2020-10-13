@@ -18,6 +18,7 @@ namespace TicTacToeProblem
             {
                 computerChoice = 'X';
             }
+            TicTacToe.showBoard(board);  
         }
     }
 }
