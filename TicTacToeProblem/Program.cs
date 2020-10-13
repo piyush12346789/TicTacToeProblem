@@ -7,7 +7,7 @@ namespace TicTacToeProblem
         static void Main(string[] args)
         {
             TicTacToeGame TicTacToe = new TicTacToeGame();
-            char[] gameBoard = TicTacToe.createTicTacToeBoard();
+            char[] board = TicTacToe.createTicTacToeBoard();
             char userChoice = TicTacToe.chooseUserChoice();
             char computerChoice;
             if (userChoice == 'X')
