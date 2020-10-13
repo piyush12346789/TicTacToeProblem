@@ -60,7 +60,7 @@ namespace TicTacToeProblem
             {
                 Console.WriteLine("What is your desired next move?");
                 int index = Convert.ToInt32(Console.ReadLine());
-                if((index >=1 && index <= 9) && (board[index] == ' '))
+                if(index >=1 && index <= 9 && board[index] == ' ')
                 {
                     return index;
                 }
