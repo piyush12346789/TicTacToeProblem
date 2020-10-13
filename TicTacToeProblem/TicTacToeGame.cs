@@ -6,6 +6,8 @@ namespace TicTacToeProblem
 {
     public class TicTacToeGame
     {
+        const int HEADS = 1;
+        const int TAILS = 2;
         public char[] createTicTacToeBoard()
         {
             char[] board = new char[10];
@@ -81,6 +83,19 @@ namespace TicTacToeProblem
             else
                 return false;
         }
-
+        public void flipingACoin()
+        {
+            Random random = new Random();
+            int toss = random.Next(1, 3);
+            switch (toss)
+            {
+                case HEADS:
+                    Console.WriteLine("User Won The Toss.");
+                    break;
+                case TAILS:
+                    Console.WriteLine("Computer won the toss.");
+                    break;
+            }
+        }
     }
 }
