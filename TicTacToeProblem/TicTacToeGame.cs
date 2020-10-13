@@ -31,6 +31,19 @@ namespace TicTacToeProblem
                 }
             }
         }
+        public char getCompLetter(char userChoice)
+        {
+            char computerChoice;
+            if (userChoice == 'X')
+            {
+                computerChoice = 'O';
+            }
+            else
+            {
+                computerChoice = 'X';
+            }
+            return computerChoice;
+        }
         public void showBoard(char[] board)
         {
             Console.WriteLine(board[1] + " | " + board[2] + " | " +board[3]);
@@ -40,5 +53,23 @@ namespace TicTacToeProblem
             Console.WriteLine(board[7]  + " | " + board[8] + " | " + board[9]);
             Console.WriteLine("------------");
         }
+        public int getUserDesiredMove(char[] board)
+        {
+            int[] validMoves = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+            while (true)
+            {
+                Console.WriteLine("What is your desired next move?");
+                int index = Convert.ToInt32(Console.ReadLine());
+                if((index >=1 && index <= 9) && (board[index] == ' '))
+                {
+                    return index;
+                }
+                else
+                {
+                    Console.WriteLine("Invalid entry please check the input and try again.");
+                }
+            }
+        }
+
     }
 }
